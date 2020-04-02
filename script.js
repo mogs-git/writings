@@ -57,11 +57,33 @@ for (let i = 0; i<posts.length; i++) {
 	})
 	r.addEventListener("mouseover", (e) => {
 		console.log(e.target);
-		r.classList.add("link_hover");
+		r.classList.add("post_hover");
 	})
 	r.addEventListener("mouseout", (e) => {
-		r.classList.remove("link_hover");
+		r.classList.remove("post_hover");
 	})
 }
 
+let nav_links = ["home", "about", "writings"]
+const navbar_top = document.getElementById("links");
+
+nav_links.forEach((link) => {
+	let el = document.createElement("li");
+	el.textContent = link;
+	navbar_top.appendChild(el);
+	el.addEventListener("click", () => {
+		if (link === "home") {
+			window.open("http://mogs-git.github.io", "_self");
+		} else {
+			window.open("http://mogs-git.github.io/"+link+"/");
+		}
+	})
+	el.addEventListener("mouseover", (e) => {
+		e.target.classList.add("link_hover");
+	})
+	el.addEventListener("mouseout", (e) => {
+		e.target.classList.remove("link_hover");
+	})
+
+})
 
