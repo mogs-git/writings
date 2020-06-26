@@ -30,13 +30,13 @@ class Post {
 
 
 let posts = [];
-let titles = ["test"];
-let dates = [[2020, 2, 29]];
+let titles = ["Hansard Analysis: Part 1", "Hansard Analysis: Part 2", "Hansard Analysis: Part 3"];
+let dates = [[2019, 2, 4], [2019, 2, 5], [2019, 2, 11]];
 let descs = [""];
-let links = ["/test.md"];
+let links = ["/hansard_project/2019-02-04-hansard-text-analysis-part-1/", "/hansard_project/2019-02-05-text-mining-the-eu-withdrawal-bill-hansard", "/hansard_project/2019-02-11-text-mining-the-eu-withdrawal-bill-hansard-ii"];
 
 for (let i = 0; i < titles.length; i++) {
-	posts.push(new Post(titles[i], dates[i][0], dates[i][1], dates[i][2], descs[i], links[i]))
+	posts.push(new Post(titles[i], dates[i][0], dates[i][1]-1, dates[i][2], descs[i], links[i]))
 }
 
 for (let i = 0; i<posts.length; i++) {
